@@ -13,9 +13,7 @@ function App() {
         <img src="library.webp" alt="library" className='img-fluid border-0' />
       </div>
       <div className='col-12 my-2 text-end' >
-        <a className='text-reset text-decoration-none' href="https://unsplash.com/photos/ajE5goOGzZc" >
-          <h4 className='px-5'> photo credits </h4>
-        </a>
+        <h4 className='credit-text'> Photo by <a href="https://unsplash.com/@annahunko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anna Hunko</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> </h4>
       </div>
       <div className='col-6' >
         <Books></Books>
