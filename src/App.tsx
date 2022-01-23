@@ -6,7 +6,7 @@ import Authors from './Authors';
 function App() {
   return (
     <div className='row' >
-      <div className='col-12 text-center mt-3'>
+      <div className='col-12 text-center mt-3 mt-2'>
         <h1 className='hero-title display' > My Library </h1>
       </div>
       <div className='col-12 border-0 px-0 my-2' >
