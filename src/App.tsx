@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Books from './Books';
-import Authors from './Authors';
+import Authors from './components/Author/Authors';
 
 function App() {
   return (
@@ -16,10 +16,10 @@ function App() {
         <p> <span className='credit-text'> Photo by <a target="_blank" href="https://unsplash.com/@annahunko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anna Hunko</a> on <a target="_blank" href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> </span> </p>
       </div>
       <div className='col-6' >
-        <Books></Books>
+        <Books />
       </div>
       <div className='col-6' >
-        <Authors></Authors>
+        <Authors />
       </div>
     </div>
   );
