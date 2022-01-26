@@ -5,6 +5,14 @@ import {render} from "react-dom";
 import Confrmation from "../Alerts/Confirmation";
 
 const AuthorListItem: FunctionComponent = () => {
+    const handleOnEditClick = () => {
+
+    }
+    const handleOnDeleteClick = () => {
+
+    }
+
+
     return(
         <Row className="authorListItem my-1 mx-0 d-flex align-items-center">
             <Col className="ps-0"  xs={9}>
