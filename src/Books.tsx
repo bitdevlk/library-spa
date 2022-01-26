@@ -1,10 +1,11 @@
 import { FunctionComponent } from "react";
+import {Row} from "react-bootstrap";
 
 
 const Books: FunctionComponent = () => {
-    return (<div >
+    return (<Row className="col-sm-12">
         <h1>Books</h1>
-    </div>);
+    </Row>);
 }
 
 export default Books;
