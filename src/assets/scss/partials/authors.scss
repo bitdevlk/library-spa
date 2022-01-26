@@ -1,0 +1,25 @@
+.authorActionIcons{
+  display: none !important;
+}
+
+.authorListItem{
+  div{
+    font-weight: 500;
+  }
+  &:hover{
+    background-color: #F5F5F5;
+    .authorActionIcons{
+      display: flex !important;
+    }
+  }
+}
+.btnDelete{
+  &:hover{
+    cursor: pointer;
+  }
+}
+.btnEdit{
+  &:hover{
+    cursor: pointer;
+  }
+}
