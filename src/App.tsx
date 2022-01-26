@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Books from './components/Books/Books';
+import Books from './components/Book/Books';
 import Authors from './components/Author/Authors';
 import { Col, Container, Row } from "react-bootstrap";
 
