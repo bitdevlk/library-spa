@@ -4,6 +4,7 @@ import AuthorList from "./AuthorList";
 import '../../assets/scss/partials/crud.scss';
 import '../../assets/scss/partials/authors.scss';
 import { Col, Row } from "react-bootstrap";
+import CreateAuthor from "./CreateAuthor";
 
 
 const Authors: FunctionComponent = () => {
@@ -14,6 +15,9 @@ const Authors: FunctionComponent = () => {
             </Col>
             <Col>
                 <AuthorList />
+            </Col>
+            <Col xs={8}>
+                <CreateAuthor />
             </Col>
         </Row>
     );
