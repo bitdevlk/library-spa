@@ -2,17 +2,15 @@ import { FunctionComponent, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Edit, Trash2 } from "react-feather";
 import { render } from "react-dom";
-import { Author } from "../../Author";
+import { Book } from "../../Book";
 import Confrmation from "../Alerts/Confirmation";
 
-interface AuthorListItemProps {
+interface BookListItemProps {
     listKey: number;
-    authorItem: Author;
+    bookItem: Book;
 }
 
-
-const AuthorListItem: FunctionComponent<AuthorListItemProps> = (props) => {
-
+const BookListItem: FunctionComponent<BookListItemProps> = (props) => {
 
     const handleOnEditClick = () => {
 
@@ -23,11 +21,11 @@ const AuthorListItem: FunctionComponent<AuthorListItemProps> = (props) => {
 
 
     return (
-        <Row className="authorListItem my-1 mx-0 d-flex align-items-center">
+        <Row className="bookListItem my-1 mx-0 d-flex align-items-center">
             <Col className="ps-0" xs={9}>
-                <div className="fs-3 d-flex align-items-center py-1"> {(props?.listKey ?? 0) + 1}. {props?.authorItem?.Name} </div>
+                <div className="fs-3 d-flex align-items-center py-1"> {(props?.listKey ?? 0) + 1}. {props?.bookItem?.Name} </div>
             </Col>
-            <Col className="d-flex justify-content-end authorActionIcons" xs={3}>
+            <Col className="d-flex justify-content-end bookActionIcons" xs={3}>
                 <Edit className="btnEdit me-3" onClick={handleOnEditClick} />
                 <Trash2 className="btnDelete" onClick={handleOnDeleteClick} />
             </Col>
@@ -38,4 +36,4 @@ const AuthorListItem: FunctionComponent<AuthorListItemProps> = (props) => {
     )
 }
 
-export default AuthorListItem;
+export default BookListItem;

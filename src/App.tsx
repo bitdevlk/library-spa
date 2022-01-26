@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Books from './components/Books/Books';
+import Books from './components/Book/Books';
 import Authors from './components/Author/Authors';
 import { Col, Container, Row } from "react-bootstrap";
 
@@ -14,7 +14,7 @@ function App() {
                 <img src="library.webp" alt="library" className='img-fluid border-0' />
             </div>
             <div className='col-12 my-2 text-end'>
-                <p><span className='credit-text'> Photo by <a target="_blank"
+                <p><span className='credit-text mx-0 mx-md-3'> Photo by <a target="_blank"
                     href="https://unsplash.com/@annahunko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anna Hunko</a> on <a
                         target="_blank"
                         href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> </span>
