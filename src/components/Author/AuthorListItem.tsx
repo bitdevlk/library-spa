@@ -23,7 +23,7 @@ const AuthorListItem: FunctionComponent<AuthorListItemProps> = (props) => {
 
 
     return (
-        <Row className="authorListItem my-1 mx-0 d-flex align-items-center">
+        <Row className="authorListItem my-1 mx-0 px-0 d-flex align-items-center">
             <Col className="ps-0" xs={9}>
                 <div className="fs-3 d-flex align-items-center py-1"> {(props?.listKey ?? 0) + 1}. {props?.authorItem?.Name} </div>
             </Col>
