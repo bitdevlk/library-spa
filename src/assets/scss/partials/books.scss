@@ -1,14 +1,14 @@
-.authorActionIcons {
+.bookActionIcons {
   display: none !important;
 }
 
-.authorListItem {
+.bookListItem {
   div {
     font-weight: 500;
   }
   &:hover {
     background-color: #f5f5f5;
-    .authorActionIcons {
+    .bookActionIcons {
       display: flex !important;
     }
   }
