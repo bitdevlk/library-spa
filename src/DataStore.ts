@@ -29,8 +29,8 @@ export let GetAPI = (key: string, defaultVal: any) => {
 
 export let BooksAPI = GetAPI("Books", []);
 export let GetBooks = (): Book[] => { return BooksAPI.get<Book[]>() };
-export let SetBooks = (books: Book[]) => { BooksAPI.set(books) };
+export let SaveBooks = (books: Book[]) => { BooksAPI.set(books) };
 
 export let AuthorsAPI = GetAPI("Authors", []);
-export let GetAuthors = (): Author[] => { return BooksAPI.get<Author[]>() };
-export let SetAuthors = (authors: Author[]) => { BooksAPI.set(authors) };
+export let GetAuthors = (): Author[] => { return AuthorsAPI.get<Author[]>() };
+export let SaveAuthors = (authors: Author[]) => { AuthorsAPI.set(authors) };

@@ -2,8 +2,8 @@ import { FunctionComponent, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { Edit, Trash2 } from "react-feather";
 import { render } from "react-dom";
-import Confrmation from "../Alerts/Confirmation";
 import { Book } from "../../Book";
+import Confrmation from "../Alerts/Confirmation";
 
 interface BookListItemProps {
     listKey: number;
@@ -11,8 +11,6 @@ interface BookListItemProps {
 }
 
 const BookListItem: FunctionComponent<BookListItemProps> = (props) => {
-
-
 
     const handleOnEditClick = () => {
 

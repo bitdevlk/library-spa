@@ -1,9 +1,9 @@
 import { FunctionComponent } from "react";
-import BookListItem from "./BookListItem";
 import { Col, Container, Row } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { BooksAPI, GetBooks, SetBooks } from '../../DataStore'
+import { BooksAPI, GetBooks, SaveBooks } from '../../DataStore'
 import { Book } from "../../Book";
+import BookListItem from "./BookListItem";
 
 const BookList: FunctionComponent = () => {
 
@@ -19,11 +19,13 @@ const BookList: FunctionComponent = () => {
             new Book("The Catcher in the Rye", "J.D. Salinger", "9780679744666"),
             new Book("The Grapes of Wrath", "John Steinbeck", "9780679744666"),
             new Book("The Great Gatsby", "F. Scott Fitzgerald", "9780679744666"),
+            new Book("Fantastic Beasts and Where to Find Them", "J.K. Rowling", "9780553211135"),
         ]
+        setBooks(books);
     }
 
     useEffect(() => {
-        SetBooks(books);
+        SaveBooks(books);
     });
 
     return (
