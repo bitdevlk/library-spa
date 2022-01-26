@@ -1,13 +1,16 @@
-import {ChangeEvent, FunctionComponent, useState} from "react";
+import React, {ChangeEvent, FunctionComponent, PropsWithChildren, useState} from "react";
 import {Button, Col, Form, FormLabel, FormText, Row} from "react-bootstrap";
 import {XCircle} from "react-feather";
 
-const CreateAuthor: FunctionComponent = () => {
-
+type CreateAuthorPropsModel = {
+    handleOnAddAuthorClose: () => void;
+}
+const CreateAuthor: React.FC<CreateAuthorPropsModel> = (props:PropsWithChildren<CreateAuthorPropsModel>) => {
+    const { handleOnAddAuthorClose } = props;
     const [ authorName , setAuthorName ] = useState('');
-    const handleOnFormValueChange = (event:ChangeEvent) => {
-        event.preventDefault();
-        setAuthorName('');
+    const handleOnFormValueChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        const newAuthorName: string = e.target.value;
+        setAuthorName(newAuthorName);
     }
     return (
         <>
@@ -16,7 +19,7 @@ const CreateAuthor: FunctionComponent = () => {
                     <div className="fs-4 createSectionTitle text-decoration-underline">Create Author</div>
                 </Col>
                 <Col className="d-flex  justify-content-end">
-                    <XCircle className="createSectionCloseIcon "/>
+                    <XCircle className="createSectionCloseIcon " onClick={handleOnAddAuthorClose}/>
                 </Col>
             </Row>
             <Row>
@@ -26,6 +29,7 @@ const CreateAuthor: FunctionComponent = () => {
                         <Form.Control
                             type="text"
                             value={authorName}
+                            onChange={handleOnFormValueChange}
                         />
                         <Row>
                             <Col className="d-grid justify-content-end">

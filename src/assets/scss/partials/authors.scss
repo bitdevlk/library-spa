@@ -34,3 +34,8 @@
 .createAuthorButton {
   background-color: #01589D;
 }
+.addAuthorSection{
+  &:hover{
+    cursor: pointer;
+  }
+}

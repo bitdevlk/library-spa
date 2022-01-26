@@ -13,12 +13,10 @@ const Authors: FunctionComponent = () => {
             <Col className="">
                 <AuthorWelcome />
             </Col>
-            <Col>
+            <Col className="mx-0 px-0">
                 <AuthorList />
             </Col>
-            <Col xs={8}>
-                <CreateAuthor />
-            </Col>
+
         </Row>
     );
 }
