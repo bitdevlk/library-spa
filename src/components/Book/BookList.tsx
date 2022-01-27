@@ -74,7 +74,7 @@ const BookList: FunctionComponent = () => {
     }
 
     return (
-        <Row className="px-0 my-3 row-cols-1">
+        <Row className="mx-0 px-0 my-3 row-cols-1">
             <Col className="">
                 {
                     books.length === 0 ?
