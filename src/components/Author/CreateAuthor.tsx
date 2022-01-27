@@ -14,18 +14,18 @@ const CreateAuthor: React.FC<CreateAuthorPropsModel> = (props: PropsWithChildren
     }
     return (
         <>
-            <Row>
-                <Col>
-                    <div className="fs-4 createSectionTitle text-decoration-underline">Create Author</div>
+            <Row className="align-items-center fluid" >
+                <Col className="col-10">
+                    <div className="fs-2 createSectionTitle text-decoration-underline">Create Author</div>
                 </Col>
-                <Col className="d-flex  justify-content-end">
+                <Col className="col-2 d-flex justify-content-end">
                     <XCircle className="createSectionCloseIcon " onClick={handleOnAddAuthorClose} />
                 </Col>
             </Row>
             <Row>
                 <Col className="ms-3 mt-3 ">
                     <Form.Group>
-                        <Form.Label>Name of Author</Form.Label>
+                        <Form.Label className="mt-3" >Name of Author</Form.Label>
                         <Form.Control
                             type="text"
                             value={authorName}

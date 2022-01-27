@@ -10,7 +10,7 @@ const AddBook: React.FC<AddBookPropsModel> = (props: PropsWithChildren<AddBookPr
         <Row className="my-4 addBookSection">
             <Col className="px-0 d-flex align-items-center ">
                 <Plus className="addIcon" onClick={handleOnAddBookClick} />
-                <div className="d-inline fs-5 ms-1 " onClick={handleOnAddBookClick}>Add Book</div>
+                <div className="d-inline fs-4 ms-1" onClick={handleOnAddBookClick}>Add Book</div>
             </Col>
         </Row>
     );

@@ -74,7 +74,7 @@ const BookList: FunctionComponent = () => {
     }
 
     return (
-        <Row className="mx-0 px-0 my-3 row-cols-1">
+        <Row className="px-0 my-3 row-cols-1">
             <Col className="">
                 {
                     books.length === 0 ?
@@ -91,7 +91,7 @@ const BookList: FunctionComponent = () => {
             </Col>
 
             {showCreateBook &&
-                <Col className="mt-4">
+                <Col className="mt-4 mr-auto col-11 col-md-12 col-lg-10 col-xl-8">
                     <CreateBook handleOnAddBookClose={handleOnAddBookClose} onCreateBook={onCreateBook} book={currentBook} />
                 </Col>
             }
