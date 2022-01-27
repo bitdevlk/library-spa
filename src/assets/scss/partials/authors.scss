@@ -16,26 +16,11 @@
   }
 }
 
-.createSectionTitle {
-  color: #336459;
-  font-weight: 600;
-}
-
-.createSectionCloseIcon {
-  color: #1E1E1E;
-
-  &:hover {
-    cursor: pointer;
-    fill: #a53b38;
-    color: white;
-  }
-}
-
 .createAuthorButton {
-  background-color: #01589D;
+  background-color: #01589d;
 }
-.addAuthorSection{
-  &:hover{
+.addAuthorSection {
+  &:hover {
     cursor: pointer;
   }
 }

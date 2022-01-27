@@ -30,7 +30,6 @@ const AuthorList: FunctionComponent = () => {
     });
 
     const handleOnAddAuthorClick = () => {
-
         setShowCreateAuthor(true);
     }
     const handleOnAddAuthorClose = () => {
@@ -41,7 +40,7 @@ const AuthorList: FunctionComponent = () => {
         <Row className="mx-0 px-0 my-3 row-cols-1">
             <Col className="">
                 {
-                    authors.length == 0 ?
+                    authors.length === 0 ?
                         <EmptyAuthor /> :
                         authors.map((author: Author, index: number) => {
                             return (
