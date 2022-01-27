@@ -13,3 +13,12 @@
     }
   }
 }
+
+.createBookButton {
+  background-color: #01589d;
+}
+.addBookSection {
+  &:hover {
+    cursor: pointer;
+  }
+}

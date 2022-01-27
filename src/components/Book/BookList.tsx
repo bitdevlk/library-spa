@@ -4,11 +4,15 @@ import { useState, useEffect } from "react";
 import { BooksAPI, GetBooks, SaveBooks } from '../../DataStore'
 import { Book } from "../../Book";
 import BookListItem from "./BookListItem";
+import CreateBook from "./CreateBook";
+import AddBook from "./AddBook";
+import EmptyBook from "./EmptyBook";
 
 const BookList: FunctionComponent = () => {
 
 
     let [books, setBooks] = useState(GetBooks());
+    const [showCreateBook, setShowCreateBook] = useState(false);
 
     if (books.length === 0) {
         // Fake books from copilot
@@ -28,17 +32,37 @@ const BookList: FunctionComponent = () => {
         SaveBooks(books);
     });
 
+    const handleOnAddBookClick = () => {
+        setShowCreateBook(true);
+    }
+    const handleOnAddBookClose = () => {
+        setShowCreateBook(false);
+    }
+
     return (
-        <Row className="mx-0 px-0 my-3">
+        <Row className="mx-0 px-0 my-3 row-cols-1">
             <Col className="">
                 {
-                    books.map((book: Book, index: number) => {
-                        return (
-                            <BookListItem key={index} listKey={index} bookItem={book} />
-                        )
-                    })
+                    books.length === 0 ?
+                        <EmptyBook /> :
+                        books.map((book: Book, index: number) => {
+                            return (
+                                <BookListItem key={index} listKey={index} bookItem={book} />
+                            )
+                        })
                 }
             </Col>
+            <Col>
+                <AddBook handleOnAddBookClick={handleOnAddBookClick} />
+            </Col>
+
+            {showCreateBook &&
+                <Col className="mt-4">
+                    <CreateBook handleOnAddBookClose={handleOnAddBookClose} />
+                </Col>
+            }
+
+
         </Row>
     );
 }
