@@ -1,8 +1,8 @@
-import {FunctionComponent} from "react";
-import {useState, useEffect} from "react";
-import {Col, Container, Row} from "react-bootstrap";
-import {AuthorsAPI, GetAuthors, SaveAuthors} from '../../DataStore'
-import {Author} from "../../Author";
+import { FunctionComponent } from "react";
+import { useState, useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { AuthorsAPI, GetAuthors, SaveAuthors } from '../../DataStore'
+import { Author } from "../../Author";
 import AuthorListItem from "./AuthorListItem";
 import CreateAuthor from "./CreateAuthor";
 import AddAuthor from "./AddAuthor";
@@ -30,7 +30,7 @@ const AuthorList: FunctionComponent = () => {
 
     const handleOnAddAuthorClick = () => {
 
-       setShowCreateAuthor(true);
+        setShowCreateAuthor(true);
     }
     const handleOnAddAuthorClose = () => {
         setShowCreateAuthor(false);
@@ -42,18 +42,18 @@ const AuthorList: FunctionComponent = () => {
                 {
                     authors.map((author: Author, index: number) => {
                         return (
-                            <AuthorListItem key={index} listKey={index} authorItem={author}/>
+                            <AuthorListItem key={index} listKey={index} authorItem={author} />
                         )
                     })
                 }
             </Col>
             <Col>
-                <AddAuthor handleOnAddAuthorClick={handleOnAddAuthorClick}/>
+                <AddAuthor handleOnAddAuthorClick={handleOnAddAuthorClick} />
             </Col>
 
             {showCreateAuthor &&
                 <Col className="mt-4">
-                    <CreateAuthor handleOnAddAuthorClose={handleOnAddAuthorClose}/>
+                    <CreateAuthor handleOnAddAuthorClose={handleOnAddAuthorClose} />
                 </Col>
             }
 
