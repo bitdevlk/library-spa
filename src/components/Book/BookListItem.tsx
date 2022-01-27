@@ -8,15 +8,17 @@ import Confrmation from "../Alerts/Confirmation";
 interface BookListItemProps {
     listKey: number;
     bookItem: Book;
+    onEditClick: (book: Book) => void;
+    onDeleteClick: (book: Book) => void;
 }
 
 const BookListItem: FunctionComponent<BookListItemProps> = (props) => {
 
     const handleOnEditClick = () => {
-
+        props.onEditClick(props.bookItem);
     }
     const handleOnDeleteClick = () => {
-
+        props.onDeleteClick(props.bookItem);
     }
 
 

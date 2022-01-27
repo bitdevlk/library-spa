@@ -13,6 +13,7 @@ const BookList: FunctionComponent = () => {
 
     let [books, setBooks] = useState(GetBooks());
     const [showCreateBook, setShowCreateBook] = useState(false);
+    const [currentBook, setCurrentBook] = useState(null as Book | null);
 
     if (books.length === 0) {
         // Fake books from copilot
@@ -33,10 +34,43 @@ const BookList: FunctionComponent = () => {
     });
 
     const handleOnAddBookClick = () => {
-        setShowCreateBook(true);
+        if (currentBook) {
+            setCurrentBook(null);
+            setShowCreateBook(false);
+        } else {
+            setShowCreateBook(true);
+        }
     }
     const handleOnAddBookClose = () => {
+        setCurrentBook(null);
         setShowCreateBook(false);
+    }
+
+    const onCreateBook = (old: Book | null, newBook: Book) => {
+        if (old) {
+            setBooks(books.indexOf(old) > -1 ? books.map(book => book === old ? newBook : book) : [...books, newBook]);
+        } else {
+            setBooks([...books, newBook]);
+        }
+
+        setCurrentBook(null);
+        setShowCreateBook(false);
+    }
+
+    const handleOnEditClick = (B: Book) => {
+        if (currentBook) {
+            setCurrentBook(null);
+            setShowCreateBook(false);
+        } else {
+            setCurrentBook(B);
+            setShowCreateBook(true);
+        }
+    }
+
+    const handleOnDeleteClick = (B: Book) => {
+        if (window.confirm("Are you sure you want to delete this book '" + B.Name + "'?")) {
+            setBooks(books.filter(b => b !== B));
+        }
     }
 
     return (
@@ -47,7 +81,7 @@ const BookList: FunctionComponent = () => {
                         <EmptyBook /> :
                         books.map((book: Book, index: number) => {
                             return (
-                                <BookListItem key={index} listKey={index} bookItem={book} />
+                                <BookListItem key={index} listKey={index} bookItem={book} onEditClick={handleOnEditClick} onDeleteClick={handleOnDeleteClick} />
                             )
                         })
                 }
@@ -58,7 +92,7 @@ const BookList: FunctionComponent = () => {
 
             {showCreateBook &&
                 <Col className="mt-4">
-                    <CreateBook handleOnAddBookClose={handleOnAddBookClose} />
+                    <CreateBook handleOnAddBookClose={handleOnAddBookClose} onCreateBook={onCreateBook} book={currentBook} />
                 </Col>
             }
 
