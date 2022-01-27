@@ -10,7 +10,7 @@ const AddAuthor: React.FC<AddAuthorPropsModel> = (props: PropsWithChildren<AddAu
         <Row className="my-4 addAuthorSection">
             <Col className="px-0 d-flex align-items-center ">
                 <Plus className="addIcon" onClick={handleOnAddAuthorClick} />
-                <div className="d-inline fs-5 ms-1 " onClick={handleOnAddAuthorClick}>Add Author</div>
+                <div className="d-inline fs-4 ms-1" onClick={handleOnAddAuthorClick}>Add Author</div>
             </Col>
         </Row>
     );

@@ -13,11 +13,15 @@ function App() {
             <div className='col-12 border-0 px-0 my-2'>
                 <img src="library.webp" alt="library" className='img-fluid border-0' />
             </div>
-            <div className='col-12 my-2 text-end'>
-                <p><span className='credit-text mx-0 mx-md-3'> Photo by <a target="_blank"
-                    href="https://unsplash.com/@annahunko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anna Hunko</a> on <a
-                        target="_blank"
-                        href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> </span>
+            <div className='col-12 mt-2 text-end'>
+                <p>
+                    <span className='credit-text mx-0 mx-md-3'> Photo by
+                        <a target="_blank" rel="noreferrer"
+                            href="https://unsplash.com/@annahunko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"> Anna Hunko </a>
+                        on
+                        <a target="_blank" rel="noreferrer"
+                            href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"> Unsplash </a>
+                    </span>
                 </p>
             </div>
             <Container>
