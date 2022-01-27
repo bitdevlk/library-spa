@@ -12,7 +12,7 @@ const Books: FunctionComponent = () => {
             <Col className="">
                 <BooksWelcome />
             </Col>
-            <Col>
+            <Col className="mx-0 px-0">
                 <BookList />
             </Col>
         </Row>

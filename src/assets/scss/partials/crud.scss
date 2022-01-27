@@ -8,3 +8,18 @@
     cursor: pointer;
   }
 }
+
+.createSectionTitle {
+  color: #336459;
+  font-weight: 600;
+}
+
+.createSectionCloseIcon {
+  color: #1e1e1e;
+
+  &:hover {
+    cursor: pointer;
+    fill: #a53b38;
+    color: white;
+  }
+}
