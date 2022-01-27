@@ -8,7 +8,7 @@ import BookList from "./BookList";
 
 const Books: FunctionComponent = () => {
     return (
-        <Row className="mx-3 px-0 row-cols-1">
+        <Row className="px-0 row-cols-1 data-section">
             <Col className="">
                 <BooksWelcome />
             </Col>

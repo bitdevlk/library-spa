@@ -55,7 +55,7 @@ const AuthorList: FunctionComponent = () => {
             </Col>
 
             {showCreateAuthor &&
-                <Col className="mt-4">
+                <Col className="mt-4 mr-auto col-11 col-md-12 col-lg-10 col-xl-8">
                     <CreateAuthor handleOnAddAuthorClose={handleOnAddAuthorClose} />
                 </Col>
             }

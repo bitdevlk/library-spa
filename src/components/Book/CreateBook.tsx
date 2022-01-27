@@ -62,11 +62,11 @@ const CreateBook: React.FC<CreateBookPropsModel> = (props: PropsWithChildren<Cre
 
     return (
         <>
-            <Row>
-                <Col>
-                    <div className="fs-4 createSectionTitle text-decoration-underline">Create Book</div>
+            <Row className="align-items-center fluid" >
+                <Col className="col-10">
+                    <div className="fs-2 createSectionTitle text-decoration-underline">Create Book</div>
                 </Col>
-                <Col className="d-flex  justify-content-end">
+                <Col className="col-2 d-flex justify-content-end">
                     <XCircle className="createSectionCloseIcon " onClick={handleOnAddBookClose} />
                 </Col>
             </Row>
@@ -74,21 +74,21 @@ const CreateBook: React.FC<CreateBookPropsModel> = (props: PropsWithChildren<Cre
                 <Col className="ms-3 mt-3 ">
                     <Form.Group>
 
-                        <Form.Label>Title of the Book</Form.Label>
+                        <Form.Label className="mt-3" >Title of the Book</Form.Label>
                         <Form.Control
                             type="text"
                             value={BookName}
                             onChange={handleOnFormValueChange_BookName}
                         />
 
-                        <Form.Label>ISBN</Form.Label>
+                        <Form.Label className="mt-3" >ISBN</Form.Label>
                         <Form.Control
                             type="text"
                             value={ISBN}
                             onChange={handleOnFormValueChange_ISBN}
                         />
 
-                        <Form.Label>Author</Form.Label>
+                        <Form.Label className="mt-3" >Author</Form.Label>
                         <Select
                             defaultValue={authorOption}
                             options={authorOptions}
