@@ -6,6 +6,7 @@ import { Author } from "../../Author";
 import AuthorListItem from "./AuthorListItem";
 import CreateAuthor from "./CreateAuthor";
 import AddAuthor from "./AddAuthor";
+import EmptyAuthor from "./EmptyAuthor";
 
 const AuthorList: FunctionComponent = () => {
 
@@ -40,11 +41,14 @@ const AuthorList: FunctionComponent = () => {
         <Row className="mx-0 px-0 my-3 row-cols-1">
             <Col className="">
                 {
-                    authors.map((author: Author, index: number) => {
-                        return (
-                            <AuthorListItem key={index} listKey={index} authorItem={author} />
-                        )
-                    })
+                    authors.length == 0 ?
+                        <EmptyAuthor /> :
+                        authors.map((author: Author, index: number) => {
+                            return (
+                                <AuthorListItem key={index} listKey={index} authorItem={author} />
+                            )
+                        })
+
                 }
             </Col>
             <Col>
