@@ -15,7 +15,7 @@ function App() {
             </div>
             <div className='col-12 mt-2 text-end'>
                 <p>
-                    <span className='credit-text mx-0 mx-md-3'> Photo by
+                    <span className='credit-text mx-0 mx-md-5'> Photo by
                         <a target="_blank" rel="noreferrer"
                             href="https://unsplash.com/@annahunko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"> Anna Hunko </a>
                         on
