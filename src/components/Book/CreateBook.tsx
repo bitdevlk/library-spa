@@ -94,9 +94,10 @@ const CreateBook: React.FC<CreateBookPropsModel> = (props: PropsWithChildren<Cre
                             options={authorOptions}
                             onChange={(selectedOption) => { handleAuthorSelectChange(selectedOption) }}
                             onMenuOpen={() => { loadAuthors() }}
-                            placeholder="Select Author"
+                            placeholder=""
                             className="basic-multi-select"
                             classNamePrefix="select"
+                            isClearable={true}
                         />
 
 
