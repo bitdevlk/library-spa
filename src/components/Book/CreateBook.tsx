@@ -76,6 +76,7 @@ const CreateBook: React.FC<CreateBookPropsModel> = (props: PropsWithChildren<Cre
 
                         <Form.Label className="mt-3" >Title of the Book</Form.Label>
                         <Form.Control
+                            className="border-gray"
                             type="text"
                             value={BookName}
                             onChange={handleOnFormValueChange_BookName}
@@ -83,6 +84,7 @@ const CreateBook: React.FC<CreateBookPropsModel> = (props: PropsWithChildren<Cre
 
                         <Form.Label className="mt-3" >ISBN</Form.Label>
                         <Form.Control
+                            className="border-gray"
                             type="text"
                             value={ISBN}
                             onChange={handleOnFormValueChange_ISBN}
@@ -95,7 +97,7 @@ const CreateBook: React.FC<CreateBookPropsModel> = (props: PropsWithChildren<Cre
                             onChange={(selectedOption) => { handleAuthorSelectChange(selectedOption) }}
                             onMenuOpen={() => { loadAuthors() }}
                             placeholder=""
-                            className="basic-multi-select"
+                            className="basic-multi-select border-gray"
                             classNamePrefix="select"
                             isClearable={true}
                         />

@@ -44,6 +44,7 @@ const CreateAuthor: React.FC<CreateAuthorPropsModel> = (props: PropsWithChildren
                     <Form.Group>
                         <Form.Label className="mt-3" >Name of Author</Form.Label>
                         <Form.Control
+                            className="border-gray"
                             type="text"
                             value={authorName}
                             onChange={handleOnFormValueChange}
