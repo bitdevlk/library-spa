@@ -14,17 +14,6 @@ const AuthorList: FunctionComponent = () => {
     const [showCreateAuthor, setShowCreateAuthor] = useState(false);
     const [currentAuthor, setCurrentAuthor] = useState(null as Author | null);
 
-    if (authors.length === 0) {
-        // Fake authors from copilot
-        authors = [
-            new Author("J.R.R. Tolkien"),
-            new Author("J.K. Rowling"),
-            new Author("J.D. Salinger"),
-            new Author("John Steinbeck"),
-            new Author("F. Scott Fitzgerald"),
-        ]
-        setAuthors(authors);
-    }
 
     useEffect(() => {
         SaveAuthors(authors);

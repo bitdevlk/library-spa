@@ -15,19 +15,6 @@ const BookList: FunctionComponent = () => {
     const [showCreateBook, setShowCreateBook] = useState(false);
     const [currentBook, setCurrentBook] = useState(null as Book | null);
 
-    if (books.length === 0) {
-        // Fake books from copilot
-        books = [
-            new Book("The Lord of the Rings", "J.R.R. Tolkien", "9780553211135"),
-            new Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "9780746501901"),
-            new Book("The Hobbit", "J.R.R. Tolkien", "9780553211135"),
-            new Book("The Catcher in the Rye", "J.D. Salinger", "9780679744666"),
-            new Book("The Grapes of Wrath", "John Steinbeck", "9780679744666"),
-            new Book("The Great Gatsby", "F. Scott Fitzgerald", "9780679744666"),
-            new Book("Fantastic Beasts and Where to Find Them", "J.K. Rowling", "9780553211135"),
-        ]
-        setBooks(books);
-    }
 
     useEffect(() => {
         SaveBooks(books);
