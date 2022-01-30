@@ -12,6 +12,7 @@ const AuthorList: FunctionComponent = () => {
 
     let [authors, setAuthors] = useState(GetAuthors());
     const [showCreateAuthor, setShowCreateAuthor] = useState(false);
+    const [currentAuthor, setCurrentAuthor] = useState(null as Author | null);
 
     if (authors.length === 0) {
         // Fake authors from copilot
@@ -30,10 +31,43 @@ const AuthorList: FunctionComponent = () => {
     });
 
     const handleOnAddAuthorClick = () => {
-        setShowCreateAuthor(true);
+        if (currentAuthor) {
+            setCurrentAuthor(null);
+            setShowCreateAuthor(false);
+        } else {
+            setShowCreateAuthor(true);
+        }
     }
     const handleOnAddAuthorClose = () => {
+        setCurrentAuthor(null);
         setShowCreateAuthor(false);
+    }
+
+    const onCreateAuthor = (old: Author | null, newAuthor: Author) => {
+        if (old) {
+            setAuthors(authors.indexOf(old) > -1 ? authors.map(author => author === old ? newAuthor : author) : [...authors, newAuthor]);
+        } else {
+            setAuthors([...authors, newAuthor]);
+        }
+
+        setCurrentAuthor(null);
+        setShowCreateAuthor(false);
+    }
+
+    const handleOnEditClick = (B: Author) => {
+        if (currentAuthor) {
+            setCurrentAuthor(null);
+            setShowCreateAuthor(false);
+        } else {
+            setCurrentAuthor(B);
+            setShowCreateAuthor(true);
+        }
+    }
+
+    const handleOnDeleteClick = (B: Author) => {
+        if (window.confirm("Are you sure you want to delete this author '" + B.Name + "'?")) {
+            setAuthors(authors.filter(b => b !== B));
+        }
     }
 
     return (
@@ -44,7 +78,7 @@ const AuthorList: FunctionComponent = () => {
                         <EmptyAuthor /> :
                         authors.map((author: Author, index: number) => {
                             return (
-                                <AuthorListItem key={index} listKey={index} authorItem={author} />
+                                <AuthorListItem key={index} listKey={index} authorItem={author} onEditClick={handleOnEditClick} onDeleteClick={handleOnDeleteClick} />
                             )
                         })
 
@@ -56,7 +90,7 @@ const AuthorList: FunctionComponent = () => {
 
             {showCreateAuthor &&
                 <Col className="mt-4 mr-auto col-11 col-md-12 col-lg-10 col-xl-8">
-                    <CreateAuthor handleOnAddAuthorClose={handleOnAddAuthorClose} />
+                    <CreateAuthor handleOnAddAuthorClose={handleOnAddAuthorClose} onCreateAuthor={onCreateAuthor} author={currentAuthor} />
                 </Col>
             }
 

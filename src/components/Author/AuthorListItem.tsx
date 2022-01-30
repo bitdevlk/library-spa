@@ -8,6 +8,8 @@ import Confrmation from "../Alerts/Confirmation";
 interface AuthorListItemProps {
     listKey: number;
     authorItem: Author;
+    onEditClick: (author: Author) => void;
+    onDeleteClick: (author: Author) => void;
 }
 
 
@@ -15,12 +17,11 @@ const AuthorListItem: FunctionComponent<AuthorListItemProps> = (props) => {
 
 
     const handleOnEditClick = () => {
-
+        props.onEditClick(props.authorItem);
     }
     const handleOnDeleteClick = () => {
-
+        props.onDeleteClick(props.authorItem);
     }
-
 
     return (
         <Row className="authorListItem my-1 mx-0 px-0 d-flex align-items-center">
