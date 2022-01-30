@@ -1,17 +1,34 @@
 import React, { ChangeEvent, FunctionComponent, PropsWithChildren, useState } from "react";
 import { Button, Col, Form, FormLabel, FormText, Row } from "react-bootstrap";
 import { XCircle } from "react-feather";
+import { Author } from "../../Author";
 
 type CreateAuthorPropsModel = {
     handleOnAddAuthorClose: () => void;
+    onCreateAuthor: (old: Author | null, author: Author) => void;
+    author: Author | null;
 }
+
 const CreateAuthor: React.FC<CreateAuthorPropsModel> = (props: PropsWithChildren<CreateAuthorPropsModel>) => {
+
     const { handleOnAddAuthorClose } = props;
-    const [authorName, setAuthorName] = useState('');
+
+
+    const [authorName, setAuthorName] = useState(props.author?.Name ?? "");
+
     const handleOnFormValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newAuthorName: string = e.target.value;
         setAuthorName(newAuthorName);
     }
+
+    const handleOnAddAuthorClick = () => {
+        if (authorName) {
+            const newAuthor: Author = new Author(authorName);
+            props.onCreateAuthor(props.author, newAuthor);
+            handleOnAddAuthorClose();
+        }
+    }
+
     return (
         <>
             <Row className="align-items-center fluid" >
@@ -36,8 +53,9 @@ const CreateAuthor: React.FC<CreateAuthorPropsModel> = (props: PropsWithChildren
                                 <Button
                                     variant="primary"
                                     type="submit"
-                                    className="py-1 px-4 mt-4 align-items-end createAuthorButton">
-                                    Create
+                                    className="py-1 px-4 mt-4 align-items-end createAuthorButton"
+                                    onClick={() => { handleOnAddAuthorClick() }} >
+                                    {props.author ? "Save" : "Create"}
                                 </Button>
                             </Col>
                         </Row>
