@@ -1,10 +1,9 @@
-import React from 'react';
-import './App.scss';
-import { Col, Container, Row } from "react-bootstrap";
-import Welcome from './components/Welcome/Welcome';
+import React from "react";
+import Welcome from "../components/Welcome/Welcome";
+import {Col, Container, Row} from "react-bootstrap";
 
-function App() {
-    return (
+const Library :React.FC = () => {
+    return(
         <Container fluid={true}>
             <Row>
                 <Col xs={12} className="px-0">
@@ -14,11 +13,11 @@ function App() {
                     <div>Books</div>
                 </Col>
                 <Col xs={6}>
-                    <div>Authors</div>
+                    <div>Author</div>
                 </Col>
             </Row>
         </Container>
-    );
+    )
 }
 
-export default App;
+export default Library;
